@@ -74,13 +74,25 @@ export const ContactSection=()=>{
               </div>
               <div className="flex items-start space-x-4">
                 <div className="p-3 rounded-full bg-primary/10 shrink-0">
-                  <FaMapMarkerAlt className="h-6 w-6 text-primary" />{" "}
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Visakhapatnam, Andhra Pradesh, India")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary"
+                  >
+                    <FaMapMarkerAlt className="h-6 w-6 text-primary" />
+                  </a>
                 </div>
                 <div>
                   <h4 className="font-medium"> Location</h4>
-                  <p className="text-muted-foreground hover:text-primary transition-colors">
+                  <a
+                    href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Visakhapatnam, Andhra Pradesh, India")}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
                     Visakhapatnam, Andhra Pradesh, India
-                  </p>
+                  </a>
                 </div>
               </div>
             </div>

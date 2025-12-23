@@ -1,5 +1,5 @@
 import { ArrowRight, ExternalLink, Github, ChevronLeft, ChevronRight, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const projects = [
   {
@@ -168,7 +168,7 @@ const ProjectCard = ({ project, onClick }) => {
         <img
           src={project.images[currentImageIndex]}
           alt={project.title}
-          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105 rotate-0"
         />
         {project.images.length > 1 && (
           <>
@@ -190,7 +190,7 @@ const ProjectCard = ({ project, onClick }) => {
         )}
       </div>
 
-      <div className="p-6 flex flex-col flex-grow">
+      <div className="p-6 flex flex-col flex-grow text-left">
         <h3 className="text-xl font-bold mb-3 h-14 overflow-hidden flex items-center text-foreground group-hover:text-primary transition-colors line-clamp-2"> {project.title}</h3>
         
         <div className="flex flex-wrap gap-2 mb-4 min-h-[32px]">
@@ -255,7 +255,7 @@ const ProjectModal = ({ project, onClose }) => {
              <img
               src={project.images[currentImageIndex]}
               alt={project.title}
-              className="w-full h-full object-contain object-center"
+              className="w-full h-full object-contain object-center rotate-0"
             />
              {project.images.length > 1 && (
               <>
@@ -284,7 +284,7 @@ const ProjectModal = ({ project, onClose }) => {
           </div>
 
           {/* Content */}
-          <div className="p-8 flex flex-col">
+          <div className="p-8 flex flex-col text-left">
             <h2 className="text-3xl font-bold mb-4">{project.title}</h2>
             
             <div className="flex flex-wrap gap-2 mb-6">
@@ -306,7 +306,7 @@ const ProjectModal = ({ project, onClose }) => {
               <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
                 Key Features
               </h4>
-              <ul className="space-y-2">
+              <ul className="space-y-2 text-left">
                 {project.features && project.features.map((feature, idx) => (
                   <li key={idx} className="flex items-start gap-2 text-sm text-muted-foreground">
                     <span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-primary shrink-0"></span>
@@ -343,6 +343,15 @@ const ProjectModal = ({ project, onClose }) => {
 
 export const ProjectsSection = () => {
     const [selectedProject, setSelectedProject] = useState(null);
+
+    useEffect(() => {
+      if (selectedProject) {
+        const prev = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        return () => { document.body.style.overflow = prev || ''; };
+      }
+      return undefined;
+    }, [selectedProject]);
 
     return (
     <section id="projects" className="py-24 px-4 relative">

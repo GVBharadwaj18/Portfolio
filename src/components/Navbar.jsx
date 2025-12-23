@@ -15,7 +15,7 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   useEffect(()=>{
     const handleScroll = () => {
-      setIsScrolled(window.screenY > 10);
+      setIsScrolled(window.scrollY > 10);
       setIsMenuOpen(false);
     };
     window.addEventListener("scroll", handleScroll);
@@ -34,8 +34,8 @@ export const Navbar = () => {
             <a className="text-xl font-bold text-primary flex items-center gap-2"
             href="#hero">
                 <span className="relative z-10 flex flex-wrap items-center gap-2">
-                     <span className="font-signature text-3xl font-extrabold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent"> GV Bharadwaj's </span>
-                     <span className="inline-block text-foreground/80 font-bold">Portfolio</span>
+                 <span className="font-signature text-2xl md:text-3xl font-extrabold bg-gradient-to-r from-primary to-purple-400 bg-clip-text text-transparent"> GV Bharadwaj's </span>
+                 <span className="inline-block text-foreground/80 font-bold text-sm md:text-base">Portfolio</span>
                 </span>
             </a>
             {/* for desktop*/}

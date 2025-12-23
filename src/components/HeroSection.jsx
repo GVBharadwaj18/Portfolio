@@ -31,7 +31,7 @@ export const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-16 pb-20">
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 pt-24 md:pt-16 pb-20">
     <div className="container max-w-6xl mx-auto z-10">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* Text Content */}

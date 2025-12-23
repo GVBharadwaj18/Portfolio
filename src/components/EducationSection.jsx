@@ -55,8 +55,15 @@ export const EducationSection = () => {
 
                    <div className="flex flex-wrap items-center gap-4 text-muted-foreground text-sm md:text-base">
                       <div className="flex items-center gap-1">
-                        <MapPin size={16} />
-                        {edu.location}
+                        <a
+                          href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(edu.location)}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex items-center gap-1 hover:underline text-muted-foreground"
+                        >
+                          <MapPin size={16} />
+                          {edu.location}
+                        </a>
                       </div>
                       <div className="flex items-center gap-1 text-foreground font-medium bg-primary/10 px-3 py-1 rounded-full">
                          <Award size={16} className="text-primary" />
