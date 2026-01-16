@@ -5,7 +5,7 @@ const educationData = [
     institution: "National Institute of Technology, Silchar",
     location: "Assam, India",
     degree: "Bachelor of Technology (B.Tech) in Computer Science and Engineering",
-    score: "CGPA: 8.57",
+    score: "CGPA: 8.73",
     duration: "2023 – 2027",
   },
   {
